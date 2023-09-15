@@ -5,22 +5,32 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jdk.jfr.DataAmount;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.NotFound;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long DepartmentId;
+    private Long DepartmentId;
+
     private String DepartmentName;
     private String DepartmentAddress;
     private String DepartmentCode;
 
-    public long getDepartmentId() {
+    /* public Long getDepartmentId() {
         return DepartmentId;
     }
 
-    public void setDepartmentId(long departmentId) {
+    public void setDepartmentId(Long departmentId) {
         DepartmentId = departmentId;
     }
 
@@ -48,7 +58,7 @@ public class Department {
         DepartmentCode = departmentCode;
     }
 
-    public Department(long departmentId, String departmentName, String departmentAddress, String departmentCode) {
+    public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
         DepartmentId = departmentId;
         DepartmentName = departmentName;
         DepartmentAddress = departmentAddress;
@@ -66,5 +76,5 @@ public class Department {
                 ", DepartmentAddress='" + DepartmentAddress + '\'' +
                 ", DepartmentCode='" + DepartmentCode + '\'' +
                 '}';
-    }
+    }*/
 }
